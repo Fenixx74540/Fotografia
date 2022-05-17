@@ -17,6 +17,11 @@
     padding: 30px 0;
     /* background: #349e69; */
     font-family: 'Ubuntu', sans-serif;
+    transition: all 0.9s ease;
+}
+.navbar.sticky{
+    padding: 15px 0;
+    background: #349e69;
 }
 .navbar .max-width{
     display: flex;
@@ -30,6 +35,10 @@
 }
 .navbar .logo a span{
     color: #349e69;
+    transition: all 0.9s ease;
+}
+.navbar.sticky .logo a span{
+    color: black;
 }
 .navbar .menu li{
     list-style: none;
