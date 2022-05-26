@@ -55,6 +55,18 @@
 .navbar .menu li a:hover{
     color: #349e69;
 }
+.navbar.sticky .menu li a:hover{
+    padding: 15px 0;
+    background: #349e69;
+}
+
+/* Menu btn */
+.menu-btn{
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
 
 /* Strona główna */
 .home{
@@ -63,12 +75,12 @@
     height: 100vh;
     color: #fff;
     min-height: 500px;
-    background-size: cover;
-    background-attachment: fixed;
+    /* background-size: cover;
+    background-attachment: fixed; */
     font-family: 'Ubuntu', sans-serif;
 }
 .home .max-width{
-    /* margin: auto 0 auto 40px; */
+    margin: auto 0 auto 40px;
 }
 .home .home-content .text-1{
     font-size: 27px;
@@ -85,4 +97,76 @@
 .home .home-content .text-3 span{
     color: #349e69;
     font-weight: 500;
+}
+
+/* Responsywne zapytania start */
+@media (max-width: 1104px){
+    .home .max-width{
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 991px){
+    .max-width{
+        padding: 0 50px;
+    }
+}
+
+@media (max-width: 947px){
+    .menu-btn{
+        display: block;
+        z-index: 999;
+    }
+    .menu-btn i.active:before{
+        content: "\f00d";
+    }
+    .navbar .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: #111;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active{
+        left: 0;
+    }
+    .navbar .menu li{
+        display: inline-block;
+    }
+    .navbar .menu li a{
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    .home .home-content .text-2{
+        font-size: 70px;
+    }
+    .home .home-content .text-3{
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 690px) {
+    .max-width{
+        padding: 0 23px;
+    }
+    .home .home-content .text-2{
+        font-size: 60px;
+    }
+    .home .home-content .text-3{
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 500px) {
+    .home .home-content .text-2{
+        font-size: 50px;
+    }
+    .home .home-content .text-3{
+        font-size: 27px;
+    }
 }

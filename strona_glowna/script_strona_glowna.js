@@ -8,5 +8,10 @@ $(document).ready(function(){
             //gdy wrócimy z powrotem do góry to usuwa klasę dodającą w.w. atrybuty
             $('.navbar').removeClass("sticky");
         }
-    })
+    });
+    // skrypt przełączający tryb menu
+    $('.menu-btn').click(function(){
+        $('.navbar .menu').toggleClass("active");
+        $('.menu-btn i').toggleClass("active");
+    });
 });
