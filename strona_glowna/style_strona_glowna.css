@@ -359,18 +359,61 @@ section .title::after{
     content: "Co uwieczniłam";
 }
 .examples .carousel .card{
-    background: #222;
     border-radius: 6px;
-    padding: 25px 35px;
+    padding: 18px 25px;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.5s ease;
 }
+
+.examples .carousel .card .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+}
+
+.examples .carousel .card:hover .box{
+    transform: scale(1.1);
+}
+
 .examples .carousel .card img{
-    height: 300px;
+    height: 350px;
     width: 300px;
     object-fit: cover;
     border-radius: 5%;
-    border: 3px solid #349e69;
+    border: 2px solid #349e69;
+    transition: all 0.5s ease;
 }
 
+.examples .carousel .card:hover img{
+    border-color: #fff;
+}
+
+.owl-dots{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.owl-dot{
+    height: 13px;
+    width: 13px;
+    margin: 0 5px;
+    outline: none!important;
+    border-radius: 50%;
+    border: 2px solid #349e69!important;
+    transition: all 0.5s ease;
+}
+
+.owl-dot.active{
+    width: 35px;
+    border-radius: 14px;
+}
+
+.owl-dot.active, .owl-dot:hover{
+    background: #349e69!important;
+}
 
 /* ------------------------------------------------------------------- */
 /* Responsywne zapytania start */
