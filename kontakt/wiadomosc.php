@@ -7,7 +7,7 @@
 
     if(!empty($email) && !empty($wiadomosc)){ //jeśli email i wiadomość jest posta
         if(filter_var($email, FILTER_VALIDATE_EMAIL)){ //jeśli e-mail jest niepoprawny
-            $receiver = "mateuszlassa@gmial.com"; //odbiorca wiadomości mailowej
+            $receiver = "mateuszlassa@gmail.com"; //odbiorca wiadomości mailowej
             $subject = "Od: $imie <$email>"; // wyświetlenie odbiorcy
             //sklejenie wysłanych danych
             $body = "Imię: $imie\nEmail: $email\nTelefon: $telefon\nStrona: $strona\n\nWiadomość: $wiadomosc\n\nPozdrawiam,\n$imie";
