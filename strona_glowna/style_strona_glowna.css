@@ -5,6 +5,9 @@
     box-sizing: border-box;
     text-decoration: none;
 }
+html{
+    scroll-behavior: smooth;
+}
 .max-width{
     padding: 0 80px;
     margin: auto;
@@ -14,7 +17,7 @@
 section{
     padding: 100px 0;
 }
-.about, .services, .skills, .examples, .contact{
+.about, .services, .skills, .examples, .contact, footer{
     font-family: 'Poppins', sans-serif;
 }
 .about .about-content,
@@ -133,6 +136,33 @@ section .title::after{
     cursor: pointer;
     display: none;
 }
+
+.scroll-up-btn{
+    position: fixed;
+    height: 36px;
+    width: 38px;
+    background: #349e69;
+    right: 30px;
+    bottom: 30px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.scroll-up-btn.show{
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
 
 /* ------------------------------------------------------------------- */
 /* Strona główna */
@@ -431,7 +461,6 @@ section .title::after{
 
 /* ------------------------------------------------------------------- */
 /* Kontakt */
-
 .contact .title::after{
     content: "W kontakcie";
 }
@@ -529,12 +558,28 @@ section .title::after{
     border-radius: 5px;
     transition: all 0.5s ease;
     cursor: pointer;
-    
 }
 
 .right form .button button:hover{
     color: #349e69;
     background: none;
+}
+
+/* ------------------------------------------------------------------- */
+/* Stopka */
+footer{
+    background: #111;
+    padding: 20px 23px;
+    color: #fff;
+}
+
+footer span{
+    color: #349e69;
+    text-decoration: none;
+}
+
+footer span a:hover{
+    text-decoration: underline;
 }
 
 /* ------------------------------------------------------------------- */
