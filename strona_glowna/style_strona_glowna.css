@@ -12,6 +12,8 @@ html{
     padding: 0 80px;
     margin: auto;
 }
+
+
 /* ------------------------------------------------------------------- */
 /* Wspólny CSS dla podstron */
 section{
@@ -35,9 +37,6 @@ section{
     margin: auto;
 }
 
-.about, .services, .skills, .examples, .contact, footer{
-    font-family: 'Poppins', sans-serif;
-}
 .about .about-content,
 .services .services-content,
 .skills .skills-content,
@@ -114,6 +113,7 @@ section .title::after{
 }
 
 .navbar .menu li a{
+    display: block;
     color: white;
     font-size: 18px;
     font-weight: 500;
@@ -124,7 +124,7 @@ section .title::after{
     color: #349e69;
 }
 .navbar.sticky .menu li a:hover{
-    padding: 15px 0;
+    /* padding: 15px 0; */
     background: #349e69;
 }
 
@@ -162,6 +162,9 @@ section .title::after{
     pointer-events: auto;
 }
 
+.scroll-up-btn:hover{
+    filter: brightness(90%);
+}
 
 
 /* ------------------------------------------------------------------- */
@@ -573,7 +576,7 @@ footer{
     color: #fff;
 }
 
-footer span{
+footer span a{
     color: #349e69;
     text-decoration: none;
 }
@@ -664,7 +667,7 @@ footer span a:hover{
     .skills .skills-content .column,
     .contact .contact-content .column{
         width: 100%;
-        margin-bottom: 40px;
+        margin-bottom: 34px;
     }
 }
 
@@ -681,8 +684,7 @@ footer span a:hover{
     .home .home-content a{
         font-size: 20px;
     }
-    .services .services-content .card,
-    .skills .skills-content .column{
+    .services .serv-content .card{
         width: 100%;
     }
 }
