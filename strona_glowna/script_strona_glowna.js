@@ -21,6 +21,13 @@ $(document).ready(function(){
     //skrypt przesuwania płynnie strony do góry
     $('.scroll-up-btn').click(function(){
         $('html').animate({scrollTop: 0});
+        //usunięcie płynnego przewijania po kliknięciu strzałki przewijania do góry
+        $('html').css("scrollBehavior", "auto");
+    });
+
+    $('.navbar .menu li a').click(function(){
+        //aktywowanie płynnego przewijania po kliknięciu w menu
+        $('html').css("scrollBehavior", "smooth");
     });
 
     //skrypt przełączający tryb menu
