@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ola fotograf</title>
-    <link rel="stylesheet" href="style_strona_glowna.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
-    <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     
@@ -230,29 +229,29 @@
                 </div>
                 <div class="column right">
                     <div class="text">Skontaktuj się ze mną</div>
-                    <form action="wiadomosc.php" method="POST">
+                    <form action="#">
                         <div class="fields">
                             <div class="field name">
-                                <input type="text" name="name" placeholder="Twoje imię" required>
+                                <input type="text" name="name" placeholder="Twoje imię">
                                 <i class="fas fa-user"></i>
                             </div>
                             <div class="field email">
-                                <input type="text" name="email" placeholder="Twój e-mail" required>
+                                <input type="text" name="email" placeholder="Twój e-mail">
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div class="field phone">
-                                <input type="text" name="phone" placeholder="Twój nr. kontaktowy" required>
+                                <input type="text" name="phone" placeholder="Twój nr. kontaktowy">
                                 <i class="fas fa-phone-alt"></i>
                             </div>
                             <div class="field term">
-                                <input type="text" name="term" id="datepicker" placeholder="Twoja propozycja terminu"  required>
+                                <input type="text" name="term" id="datepicker" placeholder="Twoja propozycja terminu">
                                 <i class="fas fa-calendar"></i>
                             </div>
                             <div class="textarea">
-                                <textarea name="message" placeholder="Krótka notka o wizji sesji zdjęciowej" required></textarea>
+                                <textarea name="message" placeholder="Krótka notka o wizji sesji zdjęciowej"></textarea>
                                 <i class="material-icons">message</i>
                             </div>
-                            <div class="button">
+                            <div class="button-area">
                                 <button type="submit">Wyślij wiadomość</button> 
                                 <span></span>
                             </div>

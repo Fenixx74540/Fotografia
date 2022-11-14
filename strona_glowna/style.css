@@ -588,12 +588,18 @@ form .textarea i{
     font-size: 20px;
 }
 
-.contact .right form .button{
+.contact .right form .button-area{
     height: 45px;
     width: 100%;
 }
 
-.right form .button button{
+/* form .button-area{
+    margin: 25px 0;
+    display: flex;
+    align-items: center;
+} */
+
+.right form .button-area button{
     height: 100%;
     width: 100%;
     border: 2px solid #349e69;
@@ -609,13 +615,13 @@ form .textarea i{
     margin-top: 50px;
 }
 
-.right form .button button:hover{
+.right form .button-area button:hover{
     color: #349e69;
     background: none;
 }
 
-.button span{
-    color: #349e69;
+.button-area span{
+    font-size: 17px;
     margin-left: 30px;
     display: none;
 } 

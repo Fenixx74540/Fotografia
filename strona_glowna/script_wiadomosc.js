@@ -1,32 +1,30 @@
 const form = document.querySelector("form"),
-statusTxt = form.querySelector(".button span");
+statusTxt = form.querySelector(".button-area span");
 
 form.onsubmit = (e)=>{
-    e.preventDefault();// uniemożliwienie przesłania formularza
-    statusTxt.style.color = "#349e69";
-    statusTxt.style.display = "block";
-    statusTxt.innerText = "Wysyłam wiadomość...";
-    form.classList.add("disabled");
+  e.preventDefault();
+  statusTxt.style.color = "#349e69";
+  statusTxt.style.display = "block";
+  statusTxt.innerText = "Sending your message...";
+  form.classList.add("disabled");
 
-
-    let xhr = new XMLHttpRequest(); // tworzenie nowego obiektu do interakcji z serwerem
-    xhr.open("POST", "wiadomosc.php", true); // wysłanie żądania wysłania wiadomości
-    xhr.onload = ()=>{ //po załądowaniu ajaxa
-        if(xhr.readyState == 4 && xhr.status == 200){ //jesli status 200 i status gotowości 4 to nie ma errora
-            let response = xhr.response; // przechowywanie odpowiedzi ajax w zmiennej odpowiedzi
-            //zmiana koloru na czerwony jeśli wystąpi error
-            if(response.indexOf("Wpisz dane do pola wiadomość i email") != -1 || response.indexOf("Podaj poprawny e-mail") != -1 ||  response.indexOf("Bład podczas wysyłania wiadomości") != -1 ){
-                statusTxt.style.color = "red";
-            }else{
-                form.reset();
-                setTimeout(()=>{
-                    statusTxt.style.display = "none";
-                }, 5000); // ukrycie komunikatu po 5s
-            }
-            statusTxt.innerText = response;
-            form.classList.remove("disabled");
-        }
+  let xhr = new XMLHttpRequest();
+  xhr.open("POST", "wiadomosc.php", true);
+  xhr.onload = ()=>{
+    if(xhr.readyState == 4 && xhr.status == 200){
+      let response = xhr.response;
+      if(response.indexOf("Email and message field is required!") != -1 || response.indexOf("Enter a valid email address!") != -1 || response.indexOf("Sorry, failed to send your message!") != -1){
+        statusTxt.style.color = "red";
+      }else{
+        form.reset();
+        setTimeout(()=>{
+          statusTxt.style.display = "none";
+        }, 3000);
+      }
+      statusTxt.innerText = response;
+      form.classList.remove("disabled");
     }
-    let formData = new FormData(form); // nowy obiekt do wysłania formatu daty
-    xhr.send(formData); 
+  }
+  let formData = new FormData(form);
+  xhr.send(formData);
 }
