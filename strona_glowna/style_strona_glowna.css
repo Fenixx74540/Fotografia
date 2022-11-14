@@ -518,14 +518,45 @@ section .title::after{
     width: 100%;
 }
 
-.contact .right form .field input,
-.contact .right form .textarea textarea{
+form .fields{
+    align-items: center;
+    margin-bottom: 25px;
+    justify-content: space-between;
+}
+
+.fields .field{
+    height: 50px;
+    position: relative;
+    width: calc(100% / 2 - 13px);
+}
+
+.contact .right form .field input
+/* .contact .right form .textarea textarea*/{ 
     height: 100%;
     width: 100%;
     border: 1px solid lightgray;
     border-radius: 5px;
     outline: none;
-    padding: 0 15px;
+    padding:0 50px 0;
+    font-size: 17px;
+    font-family: 'Poppins', sans-serif;
+}
+
+form .field input::placeholder,
+form .textarea textarea::placeholder{
+    color: lightgray;
+}
+
+form .textarea{
+     position: relative;
+}
+
+form .textarea textarea{
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 120px;
+    max-height: 100px;
+    padding: 15px 20px 0 48px;
     font-size: 17px;
     font-family: 'Poppins', sans-serif;
 }
@@ -535,9 +566,24 @@ section .title::after{
     border-color: #333;
 }
 
-.contact .right form .textarea textarea{
-    padding-top: 10px;
-    resize: none;
+form .field input:focus ~ i,
+form .textarea textarea:focus ~ i {
+    color: black;
+}
+
+.right form i{
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    color: #bfbfbf;
+    font-size: 17px;
+    pointer-events: none;
+    transform: translateY(-50%);
+}
+
+form .textarea i{
+    top: 20px;
+    font-size: 20px;
 }
 
 .contact .right form .button{
@@ -558,6 +604,7 @@ section .title::after{
     border-radius: 5px;
     transition: all 0.5s ease;
     cursor: pointer;
+    margin-top: 70px;
 }
 
 .right form .button button:hover{
