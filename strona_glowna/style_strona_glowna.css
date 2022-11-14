@@ -614,6 +614,12 @@ form .textarea i{
     background: none;
 }
 
+.button span{
+    color: #349e69;
+    margin-left: 30px;
+    display: none;
+} 
+
 /* ------------------------------------------------------------------- */
 /* Stopka */
 footer{

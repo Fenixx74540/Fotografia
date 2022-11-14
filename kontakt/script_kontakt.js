@@ -6,7 +6,7 @@ form.onsubmit = (e)=>{
     statusTxt.style.color = "#349e69";
     statusTxt.style.display = "block";
 
-    let xhr = new XMLHttpRequest(); // tworzenie nowego obiektu xml
+    let xhr = new XMLHttpRequest(); // tworzenie nowego obiektu do interakcji z serwerem
     xhr.open("POST", "wiadomosc.php", true); // wysłanie żądania wysłania wiadomości
     xhr.onload = ()=>{ //po załądowaniu ajaxa
         if(xhr.readyState == 4 && xhr.status == 200){ //jesli status 200 i status gotowości 4 to nie ma errora
