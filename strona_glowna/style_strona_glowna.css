@@ -560,7 +560,7 @@ form .textarea textarea{
     font-size: 17px;
     font-family: 'Poppins', sans-serif;
 }
-
+ 
 .contact .right form .field input:focus,
 .contact .right form .textarea textarea:focus{
     border-color: #333;

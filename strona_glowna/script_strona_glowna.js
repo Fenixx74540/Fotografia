@@ -16,7 +16,7 @@ $(document).ready(function(){
             //gey wrócimy z powrotem do góry to usuwa klasa 
             $('.scroll-up-btn').removeClass("show");
         }
-    });
+    }); 
 
     //skrypt przesuwania płynnie strony do góry
     $('.scroll-up-btn').click(function(){
