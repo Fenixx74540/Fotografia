@@ -5,6 +5,9 @@ form.onsubmit = (e)=>{
     e.preventDefault();// uniemożliwienie przesłania formularza
     statusTxt.style.color = "#349e69";
     statusTxt.style.display = "block";
+    statusTxt.innerText = "Wysyłam wiadomość...";
+    form.classList.add("disabled");
+
 
     let xhr = new XMLHttpRequest(); // tworzenie nowego obiektu do interakcji z serwerem
     xhr.open("POST", "wiadomosc.php", true); // wysłanie żądania wysłania wiadomości
@@ -12,7 +15,7 @@ form.onsubmit = (e)=>{
         if(xhr.readyState == 4 && xhr.status == 200){ //jesli status 200 i status gotowości 4 to nie ma errora
             let response = xhr.response; // przechowywanie odpowiedzi ajax w zmiennej odpowiedzi
             //zmiana koloru na czerwony jeśli wystąpi error
-            if(response.indexOf("Wpisz dane do pola wiadomość i email") != -1 || response.indexOf("Podaj poprawny e-mail") ||  response.indexOf("Bład podczas wysyłania wiadomości")){
+            if(response.indexOf("Wpisz dane do pola wiadomość i email") != -1 || response.indexOf("Podaj poprawny e-mail") != -1 ||  response.indexOf("Bład podczas wysyłania wiadomości") != -1 ){
                 statusTxt.style.color = "red";
             }else{
                 form.reset();
@@ -21,8 +24,9 @@ form.onsubmit = (e)=>{
                 }, 5000); // ukrycie komunikatu po 5s
             }
             statusTxt.innerText = response;
+            form.classList.remove("disabled");
         }
     }
-    let formData = new FormData(); // nowy obiekt do wysłania formatu daty
+    let formData = new FormData(form); // nowy obiekt do wysłania formatu daty
     xhr.send(formData); 
 }
