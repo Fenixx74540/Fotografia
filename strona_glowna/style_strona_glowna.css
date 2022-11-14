@@ -530,8 +530,7 @@ form .fields{
     width: calc(100% / 2 - 13px);
 }
 
-.contact .right form .field input
-/* .contact .right form .textarea textarea*/{ 
+.contact .right form .field input{ 
     height: 100%;
     width: 100%;
     border: 1px solid lightgray;
@@ -559,6 +558,9 @@ form .textarea textarea{
     padding: 15px 20px 0 48px;
     font-size: 17px;
     font-family: 'Poppins', sans-serif;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    outline: none;
 }
  
 .contact .right form .field input:focus,
@@ -604,7 +606,7 @@ form .textarea i{
     border-radius: 5px;
     transition: all 0.5s ease;
     cursor: pointer;
-    margin-top: 70px;
+    margin-top: 50px;
 }
 
 .right form .button button:hover{
