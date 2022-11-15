@@ -5,21 +5,22 @@
   $term = htmlspecialchars($_POST['term']);
   $message = htmlspecialchars($_POST['message']);
 
-  if(!empty($email) && !empty($message)){
-    if(filter_var($email, FILTER_VALIDATE_EMAIL)){
-      $receiver = "kontakt@photographerolaa.pl"; //enter that email address where you want to receive all messages
-      $subject = "From: $name <$email>";
-      $body = "Name: $name\nEmail: $email\nPhone: $phone\Termin: $term\n\nMessage:\n$message\n\nRegards,\n$name";
-      $sender = "From: $email";
+  if(!empty($email) && !empty($message)){ //jeśli email i wiadomość jest posta
+    if(filter_var($email, FILTER_VALIDATE_EMAIL)){ //jeśli e-mail jest niepoprawny
+      $receiver = "kontakt@photographerolaa.pl"; //odbiorca wiadomości mailowej
+      $subject = "From: $name <$email>"; // wyświetlenie odbiorcy w tytule maila
+      //sklejenie wysyłanych danych
+      $body = "Imię: $name\nEmail: $email\nNr. kontaktowy: $phone\nTermin: $term\n\nNotka:\n$message\n\nPozdrawiam,\n$name";
+      $sender = "Od: $email";
       if(mail($receiver, $subject, $body, $sender)){
-         echo "Your message has been sent";
+         echo "Wiadomość została wysłana";
       }else{
-         echo "Sorry, failed to send your message!";
+         echo "Przepraszamy, mamy problem z wysłaniem wiadomości";
       }
     }else{
-      echo "Enter a valid email address!";
+      echo "Podaj poprawny adres E-mail";
     }
   }else{
-    echo "Email and message field is required!";
+    echo "Pola E-mail oraz notka są wymagane";
   }
 ?>
