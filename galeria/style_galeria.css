@@ -1,60 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
-    margin: 0;
-    padding: 0;
+    margin: 10;
+    padding: 5;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+}
+
+::selection{
+    color: #fff;
+    background: #349e69;
 }
 
 body{
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    padding: 10px;
+    min-height: 90vh;
+    padding: 5px;
 }
 
 .wrapper{
     max-width: 1100px;
 }
 
-.wrapper .gallery{
+.gallery{
     display: flex;
     flex-wrap: wrap;
 }
 
-.gallery span{
+.gallery .image{
+    padding: 6px;
+    width: calc(100% / 3);
+}
+
+.gallery .image span{
     display: flex;
     width: 100%;
     overflow: hidden;
-}
-
-.gallery .image{
-    padding: 7px;
-    width: calc(100% / 3);
+    border-radius: 4px;
 }
 
 .gallery .image img{
     width: 100%;
     vertical-align: middle;
     transition: all 0.3s ease;
+    border-radius: 4px;
 }
 
 .gallery .image:hover img{
-    transform: scale(1.1);
-}
-
-@media (max-width: 1000px){
-    .gallery .image{
-        width: calc(100% / 2);
-    }
-}
-
-@media (max-width: 600px){
-    .gallery .image{
-        padding: 4px;
-        width: 100%;
-    }
+    transform: scale(1.05);
 }
 
 .preview-box{
@@ -83,20 +77,14 @@ body{
 .preview-box .details{
     display: flex;
     align-items: center;
-    padding: 12px 15px 12px 10px;
+    padding: 11px 14px 11px 9px;
     justify-content: space-between;
 }
 
-.preview-box .details .icon{
-    color: #007bff;
+.details .icon{
+    color: #349e69;
+    font-size: 17px;
     cursor: pointer;
-    font-size: 20px;
-}
-
-.details .title{
-    display: flex;
-    font-size: flex;
-    font-weight: 400;
 }
 
 .details .title p{
@@ -108,6 +96,7 @@ body{
 }
 
 .preview-box .img-box{
+    position: relative;
     display: flex;
     width: 100%;
 }
@@ -115,22 +104,22 @@ body{
 .img-box .slide{
     position: absolute;
     top: 50%;
-    z-index: 3;
     transform: translateY(-50%);
     font-size: 30px;
     cursor: pointer;
     color: #fff;
     width: 60px;
     height: 50px;
+    border-radius: 3px;
     line-height: 50px;
     text-align: center;
 }
 
-.img-box .slide.prev{
+.slide.prev{
     left: 0;
 }
 
-.img-box .slide.next{
+.slide.next{
     right: 0;
 }
 
@@ -147,4 +136,17 @@ body{
     width: 100%;
     display: none;
     background: rgba(0,0,0,0.4);
+}
+
+@media (max-width: 1000px){
+    .gallery .image{
+        width: calc(100% / 2);
+    }
+}
+
+@media (max-width: 600px){
+    .gallery .image{
+        padding: 4px;
+        width: 100%;
+    }
 }
