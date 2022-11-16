@@ -8,7 +8,7 @@
   if(!empty($email) && !empty($message)){ //jeśli email i wiadomość jest posta
     if(filter_var($email, FILTER_VALIDATE_EMAIL)){ //jeśli e-mail jest niepoprawny
       $receiver = "kontakt@photographerolaa.pl"; //odbiorca wiadomości mailowej
-      $subject = "From: $name <$email>"; // wyświetlenie odbiorcy w tytule maila
+      $subject = "Od: $name <$email>"; // wyświetlenie odbiorcy w tytule maila
       //sklejenie wysyłanych danych
       $body = "Imię: $name\nEmail: $email\nNr. kontaktowy: $phone\nTermin: $term\n\nNotka:\n$message\n\nPozdrawiam,\n$name";
       $sender = "Od: $email";
