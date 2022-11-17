@@ -81,6 +81,12 @@ body{
     justify-content: space-between;
 }
 
+.preview-box .details .title{
+    display: flex;
+    font-size: 18px;
+    font-weight: 400;
+}
+
 .details .icon{
     color: #349e69;
     font-size: 17px;
@@ -95,13 +101,13 @@ body{
     font-weight: 500;
 }
 
-.preview-box .img-box{
+.preview-box .image-box{
     position: relative;
     display: flex;
     width: 100%;
 }
 
-.img-box .slide{
+.image-box .slide{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -116,14 +122,14 @@ body{
 }
 
 .slide.prev{
-    left: 0;
+    left: 0px;
 }
 
 .slide.next{
-    right: 0;
+    right: 0px;
 }
 
-.preview-box .img-box img{
+.image-box img{
     width: 100%;
     border-radius: 0 0 3px 3px;
 }
@@ -135,6 +141,7 @@ body{
     height: 100%;
     width: 100%;
     display: none;
+    z-index: 2;
     background: rgba(0,0,0,0.4);
 }
 
