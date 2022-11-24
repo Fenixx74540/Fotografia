@@ -13,24 +13,12 @@
         <header>Prześlij zdjęcia na serwer</header>
 
         <form action="#">
+            <input type="file" class="file-input" name="file" hidden multiple>
             <i class="fas fa-cloud-upload-alt"></i>
             <p>Wybierz plik</p>
         </form>
 
-        <section class="progress-area">
-            <li class="row">
-                <i class="fas duotone fa-file-image"></i>
-                <div class="content">
-                    <div class="details">
-                        <span class="name">Testowy_plik.jpg ֍ Wysyłanie...</span>
-                        <span class="percent">50%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress"></div>
-                    </div>
-                </div>
-            </li>
-        </section>
+        <section class="progress-area"></section>
 
         <section class="uploaded-area">
             <li class="row">
@@ -46,6 +34,6 @@
         </section>
 
     </div>
-    
+    <script src="script_uploader.js"></script>
 </body>
 </html>
