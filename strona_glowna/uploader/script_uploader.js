@@ -41,7 +41,7 @@ function uploadFile(name){
         if(loaded == total){
             progressArea.innerHTML = "";
             let uploadedHTML = `<li class="row">
-                                    <div class="content">
+                                    <div class="content upload">
                                         <i class="fas duotone fa-file-image"></i>
                                         <div class="details">
                                             <span class="name">${name} ֍ Przesłane</span>
@@ -54,7 +54,7 @@ function uploadFile(name){
             uploadedArea.insertAdjacentHTML("afterbegin", uploadedHTML);
         }
     });
-    let formData = new FormData(form);
-    xhr.send(formData); //wysyła dane do PHP
+    let data = new FormData(form);
+    xhr.send(data); //wysyła dane do PHP
 }
 
