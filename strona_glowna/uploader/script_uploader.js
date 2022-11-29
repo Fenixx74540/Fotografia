@@ -36,6 +36,7 @@ function uploadFile(name){
                                     </div>
                                 </div>
                             </li>`;
+        uploadedArea.classList.add("onprogress");
         progressArea.innerHTML = progressHTML;
         if(loaded == total){
             progressArea.innerHTML = "";
@@ -49,6 +50,8 @@ function uploadFile(name){
                                     </div>
                                     <i class="fas fa-check"></i>
                                 </li>`;
+            uploadedArea.classList.remove("onprogress");
+            uploadedArea.insertAdjacentHTML("afterbegin", uploadedHTML);
         }
     });
     let formData = new FormData(form);

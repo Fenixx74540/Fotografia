@@ -105,6 +105,10 @@ section .details span{
     overflow-y: scroll;
 }
 
+.uploaded-area.onprogress{
+    max-height: 150px;
+}
+
 .uploaded-area::-webkit-scrollbar{
     width: 0px;
 }
