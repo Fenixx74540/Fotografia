@@ -21,20 +21,35 @@ function uploadFile(name){
     xhr.upload.addEventListener("progress", ({loaded, total}) =>{
         let fileLoaded = Math.floor((loaded / total) * 100); //obliczenie procentu przesłanego pliku
         let fileTotal = Math.floor(total / 1000); //rozmiar pliku w KB
+        let fileSize;
+        //jeśli rozmiar poniżej 1024 to dopisze KB, jeśli powyżej to przeliczy i wypisze MB
+        (fileTotal < 1024) ? fileSize = fileTotal + " KB" : fileSize = (loaded / (1024 * 1024)).toFixed(2) + " MB";
         let progressHTML = `<li class="row">
                                 <i class="fas duotone fa-file-image"></i>
                                 <div class="content">
                                     <div class="details">
-                                        <span class="name">Testowy_plik.jpg ֍ Wysyłanie...</span>
-                                        <span class="percent">50%</span>
+                                        <span class="name">${name} ֍ Przesyłanie</span>
+                                        <span class="percent">${fileLoaded}%</span>
                                     </div>
                                     <div class="progress-bar">
-                                        <div class="progress"></div>
+                                        <div class="progress style="${fileLoaded}%"></div>
                                     </div>
                                 </div>
                             </li>`;
-
-        let uploadedHTML = '';
+        progressArea.innerHTML = progressHTML;
+        if(loaded == total){
+            progressArea.innerHTML = "";
+            let uploadedHTML = `<li class="row">
+                                    <div class="content">
+                                        <i class="fas duotone fa-file-image"></i>
+                                        <div class="details">
+                                            <span class="name">${name} ֍ Przesłane</span>
+                                            <span class="size">${fileSize}</span>
+                                        </div>
+                                    </div>
+                                    <i class="fas fa-check"></i>
+                                </li>`;
+        }
     });
     let formData = new FormData(form);
     xhr.send(formData); //wysyła dane do PHP
