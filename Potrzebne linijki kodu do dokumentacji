@@ -1,0 +1,11 @@
+Stworzenie tabeli dla konta fotografa
+
+CREATE TABLE admin (
+id smallint(6) NOT NULL AUTO_INCREMENT,
+username varchar(128) COLLATE utf8_polish_ci NOT NULL,
+password varchar(128) COLLATE utf8_polish_ci NOT NULL,
+PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+INSERT INTO admin (id, username, password) VALUES (1, 'ola', 'zaq1@WSX');
+----
