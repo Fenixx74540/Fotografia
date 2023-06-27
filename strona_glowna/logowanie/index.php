@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Łassa</title>
+    <title>MariaKapsiak - logowanie</title>
 </head>
-<body>
-    <a href = "index1.php"> Zaloguj się i dodaj post
-</br>
+<BODY>
+    Logowanie do konta fotografa
+    <form method="post" action="weryfikuj1.php">
+        Login:<input type="text" name="user" maxlength="20" size="20"><br>
+        Hasło:<input type="password" name="pass" maxlength="20" size="20"><br>
+        <input type="submit" value="Send"/>
+    </form>
     
+    <a href = "https://photographerolaa.pl"> Przejdź do strony głównej </a>
+</BODY>
 
 </body>
 </html>

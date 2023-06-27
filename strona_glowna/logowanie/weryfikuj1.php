@@ -9,18 +9,18 @@
      $user = htmlentities ($_POST['user'], ENT_QUOTES, "UTF-8"); // rozbrojenie potencjalnej bomby w zmiennej $user
      $pass = htmlentities ($_POST['pass'], ENT_QUOTES, "UTF-8"); // rozbrojenie potencjalnej bomby w zmiennej $pass
      
-     $dbhost="localhost"; $dbuser="u781260265_mateuszlassa"; $dbpassword="zaq1@WSX"; $dbname="u781260265_dbml";
+     $dbhost="localhost"; $dbuser="u781260265_maria"; $dbpassword="zaq1@WSX"; $dbname="u781260265_fotografia";
      $link = mysqli_connect($dbhost, $dbuser, $dbpassword, $dbname); // połączenie z BD – wpisać swoje dane
      if(!$link) { echo"Błąd: ". mysqli_connect_errno()." ".mysqli_connect_error(); } // obsługa błędu połączenia z BD
      mysqli_query($link, "SET NAMES 'utf8'"); // ustawienie polskich znaków
-     $result = mysqli_query($link, "SELECT * FROM users WHERE username='$user'"); // wiersza, w którym login=login z formularza
+     $result = mysqli_query($link, "SELECT * FROM admin WHERE username='$user'"); // wiersza, w którym login=login z formularza
      $rekord = mysqli_fetch_array($result); // wiersza z BD, struktura zmiennej jak w BD
      
     if(!$rekord) //Jeśli brak, to nie ma użytkownika o podanym loginie
     {
         mysqli_close($link); // zamknięcie połączenia z BD
-        echo "Brak użytkownika o takim loginie!"; // UWAGA nie wyświetlamy takich podpowiedzi dla hakerów
-        echo '<a href = "index1.php"> Spróbuj ponownie';
+        echo "Błędne dane logowania!"; // UWAGA nie wyświetlamy takich podpowiedzi dla hakerów
+        echo '<a href = "index.php"> Spróbuj ponownie';
         exit();
     } else { // jeśli $rekord istnieje
         if($rekord['password']==$pass) // czy hasło zgadza się z BD
@@ -35,8 +35,8 @@
         else
         {
             mysqli_close($link);
-            echo "Błąd w haśle!"; // UWAGA nie wyświetlamy takich podpowiedzi dla hakerów
-            echo '<a href = "index1.php"> Spróbuj ponownie';
+            echo "Błędne dane logowania!"; // UWAGA nie wyświetlamy takich podpowiedzi dla hakerów
+            echo '<a href = "index.php"> Spróbuj ponownie';
         }
     }
     ?>
