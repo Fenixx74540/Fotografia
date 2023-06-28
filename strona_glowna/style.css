@@ -168,7 +168,7 @@ section .title::after{
 /* Strona główna */
 .home{
     display: flex;
-    background: url("zdj-1.jpg") no-repeat center;
+    background: url("background.jpg") no-repeat center;
     height: 100vh;
     color: #fff;
     min-height: 500px;
@@ -307,7 +307,20 @@ section .title::after{
     font-size: 25px;
     font-weight: 500;
     margin: 10px 0 7px 0;
+}
 
+.services .services-content .card .sub-points{
+    font-size: 14px;
+    margin: 15px 0 30px 0;
+    padding-left: 15px;
+    display: inline-block;
+    text-align: left;
+}
+
+.services .services-content .card .sub-points li{
+    font-size: 16px;
+    margin-top: 6px;
+    
 }
 
 /* ------------------------------------------------------------------- */
@@ -315,8 +328,9 @@ section .title::after{
 .skills .title::after{
     content: "Co potrafię";
 }
+
 .skills .skills-content .column{
-    width: calc(50% - 30px)
+    width: calc(50% - 30px);
 }
 .skills .skills-content .left .text{
     font-size: 25px;
