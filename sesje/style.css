@@ -282,7 +282,6 @@ section .title::after{
     text-align: center;
     border-radius: 6px;
     padding: 50px 25px;
-    cursor: pointer;
     transition: all 0.6s ease;
 }
 .services .services-content .card:hover{
