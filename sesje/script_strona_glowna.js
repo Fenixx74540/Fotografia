@@ -39,7 +39,7 @@ $(document).ready(function(){
     //animacja wstukiwania liter oraz ich usuwania
     var typed = new Typed(
        ".typing", {
-        strings: ["Fotografem", "Blogerem", "Freelancerem"],
+        strings: ["Fotografem", "Filmowcem", "Grafikiem", "Social Media menagerem"],
         typeSpeed: 70,
         backSpeed: 50,
         loop: true
@@ -48,7 +48,7 @@ $(document).ready(function(){
 
     var typed = new Typed(
         ".typing-2", {
-         strings: ["Fotografem", "Blogerem", "Freelancerem"],
+         strings: ["Fotografem", "Filmowcem", "Grafikiem", "Social Media menagerem"],
          typeSpeed: 70,
          backSpeed: 50,
          loop: true
