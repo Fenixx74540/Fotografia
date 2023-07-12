@@ -442,16 +442,7 @@ section .title::after{
     overflow: hidden;
 }
 
-.skills .skills-content .skill picture{
-    background-color: rgba(var(--brd,var(--color_11)),var(--alpha-brd,1));
-    border-color: rgba(var(--brd,var(--color_11)),var(--alpha-brd,1));
-    border-radius: 50%;
-    border-style: solid;
-    border-width: var(--brw,2px);
-    box-shadow: var(--shd,0 1px 3px rgba(0,0,0,.5));
-    display: block;
-    overflow: hidden;
-}
+
 
 .skills-content .skill .description{
     width: 188px;
