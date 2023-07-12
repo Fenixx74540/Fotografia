@@ -31,7 +31,7 @@ section{
     justify-content: space-between;
 }
 .max-width{
-    max-width: 1300px;
+    max-width: 1500px;
     padding: 0 70px;
     margin: auto;
 }
@@ -209,6 +209,7 @@ section .title::after{
     border-radius: 6px;
     border: 2px solid #349e69;
     transition: all 0.6s ease;
+    filter: drop-shadow(5px 5px 5px #222);
 }
 .home .home-content a:hover{
     color: #349e69;
@@ -228,7 +229,8 @@ section .title::after{
     height: 400px;
     width: 400px;
     object-fit: cover;
-    border-radius: 6px;
+    border-radius: 50%;
+    filter: drop-shadow(5px 5px 5px #222);
 }
 .about .about-content .right{
     width: 55%;
@@ -255,6 +257,7 @@ section .title::after{
     border-radius: 6px;
     border: 2px solid #349e69;
     transition: all 0.6s ease;
+    filter: drop-shadow(5px 5px 5px #222);
 }
 .about .about-content .right a:hover{
     color:#349e69;
@@ -324,11 +327,19 @@ section .title::after{
 /* ------------------------------------------------------------------- */
 /* Umiejętnośći */
 .skills .title::after{
-    content: "Co potrafię";
+    content: "Co mogę zrobić";
 }
 
-.skills .skills-content .column{
-    width: calc(50% - 30px);
+.skills .skills-content .left{
+    width: 30%;
+    float: left;
+    padding: 20px;
+}
+/* LEFT */
+.skills .skills-content .right{
+    width: 70%;
+    float: right;
+    padding: 20px;
 }
 .skills .skills-content .left .text{
     font-size: 25px;
@@ -349,6 +360,7 @@ section .title::after{
     border-radius: 6px;
     border: 2px solid #349e69;
     transition: all 0.6s ease;
+    filter: drop-shadow(5px 5px 5px #222);
 }
 .skills .skills-content .left a:hover{
     color: #349e69;
@@ -357,7 +369,9 @@ section .title::after{
 .skills .skills-content .left .bars{
     margin-bottom: 15px;
 }
-.skills .skills-content .right .info{
+
+/* RIGHT */
+/* .skills .skills-content .right .info{
     display: flex;
     margin-bottom: 5px;
     align-items: center;
@@ -372,16 +386,16 @@ section .title::after{
     width: 100%;
     background: lightgray;
     position: relative;
-}
-.skills .skills-content .right .line::before{
+} */
+/* .skills .skills-content .right .line::before{
     content: "";
     position: absolute;
     height: 100%;
     left: 0;
     top: 0;
     background: #349e69;
-}
-.skills-content .right .first::before{
+} */
+/* .skills-content .right .first::before{
     width: 90%;
 }
 .skills-content .right .second::before{
@@ -395,33 +409,57 @@ section .title::after{
 }
 .skills-content .right .fifth::before{
     width: 95%;
+} */
+
+.skills .skills-content .right{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-gap: 15px;
 }
 
-.skills-content .skills-what{
-    margin: 100px 10px 300px 300px;
-    font-size: 2em;
+.skills .skills-content {
+    margin: 10px;
+    font-size: 15px;
 }
 
-.skills-content .skills-what #what1{
-    list-style-image: url(rekwizyty/CoMogeZrobic1.png);
-    /* display: inline-block; */
-    
-    /* background-position:left;
-    padding-left: 25px; */
+.skills .skills-content .skill{
+    margin: 2px;
+    font-size: 15px;
+    width: 190px;
+    height: 350px;
 }
 
-.skills-content .skills-what #what2{
-    list-style-image: url(rekwizyty/CoMogeZrobic2.png);
+.skills-content .skill .picture img{
+    width: 188px;
+    height: 188px;
+    object-fit: cover;
+    background-color: #349e69;
+    border-color: #349e69;
+    border-radius: 50%;
+    border-style: solid;
+    filter: drop-shadow(5px 5px 5px #222);
+    display: block;
+    overflow: hidden;
 }
-.skills-content .skills-what #what3{
-    list-style-image: url(rekwizyty/CoMogeZrobic3.png);
+
+.skills .skills-content .skill picture{
+    background-color: rgba(var(--brd,var(--color_11)),var(--alpha-brd,1));
+    border-color: rgba(var(--brd,var(--color_11)),var(--alpha-brd,1));
+    border-radius: 50%;
+    border-style: solid;
+    border-width: var(--brw,2px);
+    box-shadow: var(--shd,0 1px 3px rgba(0,0,0,.5));
+    display: block;
+    overflow: hidden;
 }
-.skills-content .skills-what #what4{
-    list-style-image: url(rekwizyty/CoMogeZrobic4.png);
+
+.skills-content .skill .description{
+    width: 188px;
+    height: 188px;
+    object-fit: cover;
+    margin-top: 15px;
 }
-.skills-content .skills-what #what5{
-    list-style-image: url(rekwizyty/CoMogeZrobic5.png);
-}
+
 /* ------------------------------------------------------------------- */
 /* Przykładowe zdjęcia */
 .examples .title::after{
@@ -682,6 +720,7 @@ form .textarea i{
     transition: all 0.5s ease;
     cursor: pointer;
     margin-top: 50px;
+    filter: drop-shadow(5px 5px 5px #222);
 }
 
 .right form .button-area button:hover{
@@ -714,7 +753,7 @@ footer span a:hover{
 
 /* ------------------------------------------------------------------- */
 /* Responsywne zapytania start */
-@media (max-width: 1300px){
+@media (max-width: 1500px){
     .home .max-width{
         margin-left: 0px;
     }
