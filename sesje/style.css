@@ -414,18 +414,12 @@ section .title::after{
 .skills .skills-content .right-top{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    place-items: center;
 }
 .skills .skills-content .right-bottom{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    place-items: center;
 }
 
 .skills .skills-content {
