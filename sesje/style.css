@@ -252,7 +252,7 @@ section .title::after{
     color: #fff;
     font-size: 23px;
     padding: 7px 20px;
-    margin-top: 20px;
+    margin: 20px 10px 10px 30px;
     font-weight: 500;
     border-radius: 6px;
     border: 2px solid #349e69;
@@ -356,7 +356,7 @@ section .title::after{
     font-size: 23px;
     padding: 7px 20px;
     font-weight: 500;
-    margin-top: 20px;
+    margin: 10px 0px 10px 30px;
     border-radius: 6px;
     border: 2px solid #349e69;
     transition: all 0.6s ease;
@@ -411,10 +411,21 @@ section .title::after{
     width: 95%;
 } */
 
-.skills .skills-content .right{
+.skills .skills-content .right-top{
     display: grid;
-    grid-template-columns: 2fr 3fr;
-    grid-gap: 15px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.skills .skills-content .right-bottom{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .skills .skills-content {
