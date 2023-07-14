@@ -454,8 +454,6 @@ section .title::after{
     overflow: hidden;
 }
 
-
-
 .skills-content .skill .description{
     width: 188px;
     height: 188px;
@@ -859,8 +857,27 @@ footer span a:hover{
         margin-top: 6px;
     }
 }
+@media (max-width: 850px) {
+    .max-width{
+        padding: 0 23px;
+    }
+    .skills .skills-content .right-top{
+        display: block;
+        text-align: center;
+        align-items: center;
+        place-items: center;
+        margin-left: 35%;
+    }
+    .skills .skills-content .right-bottom{
+        display: block;
+        text-align: center;
+        align-items: center;
+        place-items: center;
+        margin-left: 35%;
+    }
+}
 
-@media (max-width: 690px) {
+@media (max-width: 750px) {
     .max-width{
         padding: 0 23px;
     }
@@ -884,6 +901,40 @@ footer span a:hover{
         font-size: 13px;
         margin-top: 6px;
     }
+    .skills .skills-content .right-top{
+        display: block;
+        text-align: center;
+        align-items: center;
+        place-items: center;
+        margin-left: 30%;
+    }
+    .skills .skills-content .right-bottom{
+        display: block;
+        text-align: center;
+        align-items: center;
+        place-items: center;
+        margin-left: 30%;
+    }
+}
+
+@media (max-width: 600px) {
+    .max-width{
+        padding: 0 23px;
+    }
+    .skills .skills-content .right-top{
+        display: block;
+        text-align: center;
+        align-items: center;
+        place-items: center;
+        margin-left: 25%;
+    }
+    .skills .skills-content .right-bottom{
+        display: block;
+        text-align: center;
+        align-items: center;
+        place-items: center;
+        margin-left: 25%;
+    }
 }
 
 @media (max-width: 500px) {
@@ -906,6 +957,20 @@ footer span a:hover{
     .services .services-content .card .sub-points li{
         font-size: 10px;
         margin-top: 6px;
+    }
+    .skills .skills-content .right-top{
+        display: block;
+        text-align: center;
+        align-items: center;
+        place-items: center;
+        margin-left: 20%;
+    }
+    .skills .skills-content .right-bottom{
+        display: block;
+        text-align: center;
+        align-items: center;
+        place-items: center;
+        margin-left: 20%;
     }
     .contact .right form .fields{
         flex-direction: column;
