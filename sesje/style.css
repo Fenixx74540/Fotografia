@@ -280,7 +280,7 @@ section .title::after{
     content:"Co oferuję";
 }
 .services .services-content .card{
-    width: calc(33% - 20px);
+    width: calc(34% - 22px);
     background: #222;
     text-align: center;
     border-radius: 6px;
@@ -413,13 +413,20 @@ section .title::after{
 
 .skills .skills-content .right-top{
     display: grid;
+    text-align: center;
+    align-items: start;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 50px;
     place-items: center;
 }
 .skills .skills-content .right-bottom{
     display: grid;
+    text-align: center;
+    align-items: center;
     grid-template-columns: 1fr 1fr;
     place-items: center;
+    align-self: center;
+    justify-self: center;
 }
 
 .skills .skills-content {
@@ -766,6 +773,17 @@ footer span a:hover{
     .max-width{
         padding: 0 50px;
     }
+    .services .services-content .card{
+        width: calc(33% - 20px);
+        scale: 95%;
+        margin: 0px;
+        padding: 50px 30px;
+        font-size: 15px;
+    }
+    .services .services-content .card .sub-points li{
+        font-size: 13px;
+        margin-top: 6px;
+    }
 }
 
 @media (max-width: 947px){
@@ -831,6 +849,15 @@ footer span a:hover{
         width: 100%;
         margin-bottom: 34px;
     }
+    .services .services-content .card{
+        width: calc(34% - 20px);
+        margin: 0px;
+        padding: 50px 30px;
+    }
+    .services .services-content .card .sub-points li{
+        font-size: 13px;
+        margin-top: 6px;
+    }
 }
 
 @media (max-width: 690px) {
@@ -846,8 +873,16 @@ footer span a:hover{
     .home .home-content a{
         font-size: 20px;
     }
-    .services .serv-content .card{
-        width: 100%;
+    .services .services-content .card{
+        width: calc(33%);
+        scale: 85%;
+        margin: 0px;
+        padding: 40px 20px;
+        font-size: 15px;
+    }
+    .services .services-content .card .sub-points li{
+        font-size: 13px;
+        margin-top: 6px;
     }
 }
 
@@ -861,6 +896,16 @@ footer span a:hover{
     .about .about-content .right .text,
     .skills .skills-content .left .text{
         font-size: 19px;
+    }
+    .services .services-content .card{
+        width: calc(33%);
+        scale: 85%;
+        margin: 0px;
+        padding: 30px 5px;
+    }
+    .services .services-content .card .sub-points li{
+        font-size: 10px;
+        margin-top: 6px;
     }
     .contact .right form .fields{
         flex-direction: column;
