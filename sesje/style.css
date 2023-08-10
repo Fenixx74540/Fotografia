@@ -542,7 +542,7 @@ section .title::after{
 }
 
 .contact .contact-content .column{
-    width: calc(50% - 30px);
+    width: 25%;
 }
 
 .contact .contact-content .text{
