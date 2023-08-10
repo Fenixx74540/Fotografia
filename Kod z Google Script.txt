@@ -1,0 +1,123 @@
+Kod z Google Script
+
+const FREE_SLOTS_CALENDAR_ID = "kontakt@mariakapsiak.pl";
+const BOOKED_SLOTS_CALENDAR_ID = "38a13a254407383f40472916cdfc730bd2eda22d53ae8ca3588992f2a1fa92b7@group.calendar.google.com";
+const FORM_ID = "10xiMg-mdT7rn5j0Zae4k4cUGVVJMwJGzVzn2f6GbOnQ";
+
+function changeCalendar(e){
+  const avaliableCalendar = CalendarApp.getCalendarById(FREE_SLOTS_CALENDAR_ID);
+  const bookedCalendar = CalendarApp.getCalendarById(BOOKED_SLOTS_CALENDAR_ID);
+  var startingTime = new Date (e.namedValues["Wybierz wolny termin"])
+  var endingTime = new Date(startingTime.getTime()+(1000*60*60)*2)
+  var events = avaliableCalendar.getEvents(startingTime,endingTime)
+  events.forEach(event=>{
+    event.deleteEvent();
+    bookedCalendar.createEvent("Zarezerwowany termin",startingTime,endingTime) //możliwe dodanie imienia z formularza
+  })
+}
+
+function deleteAvaliableSlots() {
+  const calendar = CalendarApp.getCalendarById(FREE_SLOTS_CALENDAR_ID);
+  const events = calendar.getEvents(new Date(2023, 1, 1), new Date(2024, 1, 1));
+  events.forEach((event) => {
+    event.deleteEvent();
+  })
+  bringEvents();
+}
+
+function deleteBookedSlots() {
+  const calendar = CalendarApp.getCalendarById(BOOKED_SLOTS_CALENDAR_ID);
+  const events = calendar.getEvents(new Date(2023, 1, 1), new Date(2024, 1, 1));
+  events.forEach((event) => {
+    event.deleteEvent();
+  })
+  bringEvents();
+}
+
+function onOpen() {
+  SpreadsheetApp.getActiveSpreadsheet()
+  SpreadsheetApp.getUi()
+    .createMenu("Zarządzanie rezerwacjami")
+    .addSubMenu(SpreadsheetApp.getUi().createMenu('Usuń terminy')
+      .addItem("Usuń wszystkie wolne terminy", "deleteAvaliableSlots")
+      .addItem("Usuń wszystkie zarezerwowane terminy", "deleteBookedSlots"))
+    .addSeparator()
+    .addItem("Odśwież wszystkie terminy (Wolne & Zarezerwowane)", "bringEvents")
+    .addItem("Odśwież same rezerwacje", "fillDates")
+    .addToUi();
+}
+
+
+function bringEvents() {
+  const ws = SpreadsheetApp.getActiveSpreadsheet();
+  const optionsSheet = ws.getSheetByName("Opcje");
+
+  //Pobranie wydarzeń z kalendarza wolnych terminów
+  const avaliableCalendar = CalendarApp.getCalendarById(FREE_SLOTS_CALENDAR_ID)
+  var events = avaliableCalendar.getEvents(new Date(2023, 0, 1), new Date(2023, 11, 31));
+  //Czyszczenie danych z kalendarza wolnych terminów
+  optionsSheet.getRange(2, 1, lastRow(1), 2).clearContent()
+  var row = 0;
+  //Wpisanie wydarzeń z kalendarza wolnych terminów
+  events.forEach((event, index) => {
+    optionsSheet.getRange(index + 2, 1, 1, 2).setValues([[event.getStartTime(), event.getId()]]);
+    row = index + 1;//row = index + 2+1;
+  })
+
+  //Pobranie wydarzeń z kalendarza zarezerwowanych terminów
+  const bookedCalendar = CalendarApp.getCalendarById(BOOKED_SLOTS_CALENDAR_ID)
+  events = bookedCalendar.getEvents(new Date(2023, 0, 1), new Date(2023, 11, 31));
+  //Wpisanie wydarzeń z kalendarza zarezerwowanych terminów
+  events.forEach((event, index) => {
+    if(row==0) row=index+2
+    optionsSheet.getRange(row + 2, 1, 1, 2).setValues([[event.getStartTime(), event.getId()]]);
+    row++;
+  })
+  fillDates();
+}
+
+function fillDates() {
+  const ws = SpreadsheetApp.getActiveSpreadsheet();
+  const optionsSheet = ws.getSheetByName("Opcje");
+  const form = FormApp.openById(FORM_ID);
+  //Wpisanie danych z Sheet do Formularza
+  const dates = optionsSheet.getRange(2, 1, optionsSheet.getLastRow() - 1, 4).getDisplayValues();
+  const datesList = dates.filter(row => row[3] == "WOLNE").map(row => row[0]);
+  const dateQuestion = form.getItemById("1737897250");
+  if (datesList.length == 0) {
+    dateQuestion.asListItem().setChoiceValues(["Aktualnie brak wolnych terminów"])
+  } else {
+    dateQuestion.asListItem().setChoiceValues(datesList);
+  }
+}
+
+function findIdQuestions() {
+  const form = FormApp.openById(FORM_ID);
+  const questions = form.getItems();
+  questions.forEach(question => {
+    const id = question.getId();
+    const name = question.getTitle();
+    Logger.log("name:" + name + " id: " + id);
+  })
+}
+
+function lastRow(col) {
+  const ws = SpreadsheetApp.getActiveSpreadsheet();
+  const ss = ws.getActiveSheet();
+  const lastRow = ss.getMaxRows();
+  const range = ss.getRange(1, col, lastRow).getValues();
+  for (i = lastRow - 1; i >= 0; i--) {
+    if (range[i][0]) {
+      return i + 1;
+    }
+  }
+}
+
+// Wynik zapytania o ID
+// 12:43:49	Informacje	name: Imię id: 2021706399
+// 12:43:49	Informacje	name: Typ sesji id: 1731688584
+// 12:43:49	Informacje	name: Wybierz dzień tygodnia id: 1737897250
+// 12:43:49	Informacje	name: Wybierz godzinę id: 1388959887
+
+
+//[[Mon Jul 24 00:00:00 GMT+02:00 2023], [Tue Jul 25 00:00:00 GMT+02:00 2023], [Wed Jul 26 00:00:00 GMT+02:00 2023], [Thu Jul 27 00:00:00 GMT+02:00 2023], [Fri Jul 28 00:00:00 GMT+02:00 2023]]
