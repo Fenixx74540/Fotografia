@@ -561,6 +561,18 @@ section .title::after{
     height: 100%;
 }
 
+.contact .contact-content .right .Gcalendar{
+    height: 640px;
+    width: 100%;
+    margin-bottom: 35px;
+}
+
+.contact .contact-content .right iframe{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
 .contact .contact-content .right p{
     text-align: justify;
 }
