@@ -542,7 +542,7 @@ section .title::after{
 }
 
 .contact .contact-content .column{
-    width: 25%;
+    width: calc(50% - 30px);
 }
 
 .contact .contact-content .text{
@@ -551,11 +551,11 @@ section .title::after{
     margin-bottom: 12px;
 }
 
-.contact .contact-content .left p{
+.contact .contact-content .right p{
     text-align: justify;
 }
 
-.contact .contact-content .left .icons{
+.contact .contact-content .right .icons{
     margin: 10px 0;
 }
 
