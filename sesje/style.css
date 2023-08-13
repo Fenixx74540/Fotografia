@@ -552,15 +552,13 @@ section .title::after{
 }
 
 .contact .contact-content .left .Gform{
-    height: 1600px;
+    height: 1650px;
     width: 100%;
-    border: solid;
 }
 
 .contact .contact-content .left iframe{
     width: 100%;
     height: 100%;
-    border: solid red;
 }
 
 .contact .contact-content .right p{
@@ -774,7 +772,7 @@ footer span a:hover{
 
 @media (max-width: 1350px){
     .contact .contact-content .left .Gform{
-        height: 1630px;
+        height: 1645px;
         width: 100%;
     }
 }
@@ -790,7 +788,7 @@ footer span a:hover{
     }
 }
 
-@media (max-width: 1070px){
+@media (max-width: 1090px){
     .contact .contact-content .left .Gform{
         height: 1670px;
         width: 100%;
@@ -799,7 +797,14 @@ footer span a:hover{
 
 @media (max-width: 1035px){
     .contact .contact-content .left .Gform{
-        height: 1718px;
+        height: 1690px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 1015px){
+    .contact .contact-content .left .Gform{
+        height: 1740px;
         width: 100%;
     }
 }
@@ -818,6 +823,16 @@ footer span a:hover{
     .services .services-content .card .sub-points li{
         font-size: 13px;
         margin-top: 6px;
+    }
+    .contact .contact-content .left .Gform{
+        height: 1700px;
+        width: 100%;
+    }
+}
+@media (max-width: 975px){
+    .contact .contact-content .left .Gform{
+        height: 1740px;
+        width: 100%;
     }
 }
 
@@ -882,7 +897,11 @@ footer span a:hover{
     .skills .skills-content .column,
     .contact .contact-content .column{
         width: 100%;
-        margin-bottom: 34px;
+        margin-bottom: 35px;
+    }
+    .contact .contact-content .left .Gform{
+        height: 1540px;
+        width: 100%;
     }
     .services .services-content .card{
         width: calc(34% - 20px);
@@ -914,7 +933,7 @@ footer span a:hover{
     }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 760px) {
     .max-width{
         padding: 0 23px;
     }
@@ -952,9 +971,20 @@ footer span a:hover{
         place-items: center;
         margin-left: 30%;
     }
+    .contact .contact-content .left .Gform{
+        height: 1560px;
+        width: 100%;
+    }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 735px){
+    .contact .contact-content .left .Gform{
+        height: 1630px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 620px) {
     .max-width{
         padding: 0 23px;
     }
@@ -971,6 +1001,10 @@ footer span a:hover{
         align-items: center;
         place-items: center;
         margin-left: 25%;
+    }
+    .contact .contact-content .left .Gform{
+        height: 1650px;
+        width: 100%;
     }
 }
 
@@ -1008,6 +1042,10 @@ footer span a:hover{
         align-items: center;
         place-items: center;
         margin-left: 20%;
+    }
+    .contact .contact-content .left .Gform{
+        height: 1650px;
+        width: 100%;
     }
     .contact .right form .fields{
         flex-direction: column;
