@@ -551,6 +551,18 @@ section .title::after{
     margin-bottom: 12px;
 }
 
+.contact .contact-content .left .Gform{
+    height: 1600px;
+    width: 100%;
+    border: solid;
+}
+
+.contact .contact-content .left iframe{
+    width: 100%;
+    height: 100%;
+    border: solid red;
+}
+
 .contact .contact-content .right p{
     text-align: justify;
 }
@@ -760,10 +772,35 @@ footer span a:hover{
     }
 }
 
+@media (max-width: 1350px){
+    .contact .contact-content .left .Gform{
+        height: 1630px;
+        width: 100%;
+    }
+}
+
 @media (max-width: 1104px){
     .about .about-content .left img{
         height: 350px;
         width: 350px;
+    }
+    .contact .contact-content .left .Gform{
+        height: 1650px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 1070px){
+    .contact .contact-content .left .Gform{
+        height: 1670px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 1035px){
+    .contact .contact-content .left .Gform{
+        height: 1718px;
+        width: 100%;
     }
 }
 
