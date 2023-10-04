@@ -8,13 +8,13 @@
 </head>
 <BODY>
     Logowanie do konta fotografa
-    <form method="post" action="weryfikuj1.php">
+    <form method="post" action="verification.php">
         Login:<input type="text" name="user" maxlength="20" size="20"><br>
         Hasło:<input type="password" name="pass" maxlength="20" size="20"><br>
         <input type="submit" value="Send"/>
     </form>
     
-    <a href = "https://mariakapsiak.pl"> Przejdź do strony głównej </a>
+    <a href = "https://mariakapsiak.pl/sesje"> Przejdź do strony głównej </a>
 </BODY>
 
 </body>
