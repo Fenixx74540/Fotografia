@@ -1,4 +1,12 @@
+<?php 
+    include "logowanie/conn.php";
+	$sql  = "SELECT img_name FROM images ORDER BY id DESC";
 
+	$stmt = $conn->prepare($sql);
+	$stmt->execute();
+
+	$images = $stmt->fetchAll();
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -26,22 +34,20 @@
                 <li><a href="galeria.html" class="menu-btn">Galeria</a></li>
                 <li><a href="index.html#contact" class="menu-btn">Kontakt</a></li>
             </ul>
-            <div class="menu-btn">
-                <i class="fas fa-bars"></i>
-            </div>
         </div>
     </nav>
     
-    <div class="wrapper">
-        <div class="gallery">
-            <div class="image"><span><img src="zdj/zdj-1.jpg" alt=""></span></div>
-            <div class="image"><span><img src="zdj/zdj-2.jpg" alt=""></span></div>
-            <div class="image"><span><img src="zdj/zdj-3.jpg" alt=""></span></div>
-            <div class="image"><span><img src="zdj/zdj-4.jpg" alt=""></span></div>
-            <div class="image"><span><img src="zdj/zdj-5.jpg" alt=""></span></div>
-            <div class="image"><span><img src="zdj/zdj-6.jpg" alt=""></span></div>
-        </div>
-    </div>
+    
+    <?php if ($stmt->rowCount() > 0) { ?>
+        <div class="wrapper">
+        	<div class="gallery">
+        		<?php foreach ($images as $image) { ?>
+        		   <div class="image"><span><img src="/sesje/zdj/<?=$image['img_name']?>"></span></div>
+        		<?php } ?>
+        	</div>
+    	</div>
+    <?php } ?>
+    
 
     <div class="preview-box">
         <div class="details">
