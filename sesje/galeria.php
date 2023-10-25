@@ -1,5 +1,5 @@
 <?php 
-    include "logowanie/conn.php";
+    include "zarzadzanie/conn.php";
 	$sql  = "SELECT img_name FROM images ORDER BY id DESC";
 
 	$stmt = $conn->prepare($sql);
