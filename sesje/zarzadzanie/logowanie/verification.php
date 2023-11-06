@@ -1,6 +1,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
 <HEAD>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="style_verification.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
 </HEAD>
 <BODY>
     <?php
@@ -22,8 +24,11 @@
     if(!$rekord) //Jeśli brak, to nie ma użytkownika o podanym loginie
     {
         mysqli_close($conn); // zamknięcie połączenia z BD
-        echo "Błędne dane logowania!"; // UWAGA nie wyświetlamy takich podpowiedzi dla hakerów
-        echo '<a href = "login.php"> Spróbuj ponownie';
+        echo '<div class="wrapper">';
+            echo '<i class="fa-solid fa-triangle-exclamation"></i><br>';
+            echo '<h1>Błędne dane!</h1><br>';
+            echo '<a href = "login.html">Spróbuj ponownie';
+        echo '</div>';
         exit();
     } else { // jeśli $rekord istnieje
         if($rekord['password']==$pass) // czy hasło zgadza się z BD
@@ -38,8 +43,12 @@
         else
         {
             mysqli_close($conn);
-            echo '<h1 style="color:red;">Błędne dane!</h1><br>';
-            echo '<a href = "login.php"> Spróbuj ponownie';
+            echo '<div class="wrapper">';
+                echo '<i class="fa-solid fa-triangle-exclamation"></i><br>';
+                echo '<h1>Błędne dane!</h1><br>';
+                echo '<a href = "login.html">Spróbuj ponownie';
+            echo '</div>';
+            exit();
         }
     }
     ?>

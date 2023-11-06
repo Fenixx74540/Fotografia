@@ -71,34 +71,38 @@
 <head>
     <title>Link do pobrania zdjęć</title>
     <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" >-->
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">-->
-    <!--<link href="style.css" rel="stylesheet" type="text/css" >-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+    <link href="style_udostepnianie.css" rel="stylesheet" type="text/css" >
 </head>
 <body>
-    <div class="container">
-    <div class="jumbotron"><p class="text-xl-center"><?php if(isset($one)){echo $one.$two;};?></p></div>
-    <h1 class="animated bounce"><span class="glyphicon glyphicon-link"></span>Wygeneruj link do pobrania zdjęć</h1>
-    <div class="row">
-        <div class="col-sm-4"></div>
-        <div class="col-sm-4">	
-    	<form method="post" role="form" enctype="multipart/form-data">
-    	<div class="form-group">
-    	<label for="file">Wybierz paczkę zdjęć do udostępnienia:</label>
-    	<input type="file" class="form" name="file" required>
-    	</div>
-    	<div class="form-group">
-    	<label for="counting">Ustaw ile razy może być pobrane z tego linku:</label>
-    	<input type="tel" class="form" name="counting" required>
-    	</div>
-    	<div class="form-group">
-    	<label for="date">Ustaw do kiedy link ma być ważny:</label>
-    	<input type="datetime-local" class="form" name="date" required>
-    	</div>
-    	<input type="submit" name="submit" class="btn btn-success btn-lg" value="submit" />
-    	</form>
-    	</div>
-        <div class="col-sm-4"></div>
-    </div>
+    <div class="wrapper">
+        <div class="jumbotron"><p class="text-xl-center"><?php if(isset($one)){echo $one.$two;};?></p></div>
+            <h1><span class="fa-solid fa-link"></span> Wygeneruj link do pobrania zdjęć</h1>
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">	
+                	<form method="post" role="form" enctype="multipart/form-data">
+                	<div class="input-box">
+                	    <label for="file">Wybierz paczkę zdjęć do udostępnienia:</label>
+                	    <input type="file" name="file" required>
+                    </div>
+            	    <div class="input-box">
+            	        <label for="counting">Ustaw ile razy może być pobrane z tego linku:</label>
+            	        <input type="tel" name="counting" required>
+            	    </div>
+            	    <div class="input-box">
+            	        <label for="date">Ustaw do kiedy link ma być ważny:</label><br>
+            	        <!--<span class="datepicker-toggle">-->
+                     <!--       <span class="datepicker-toggle-button"></span>-->
+                     <!--       <input type="datetime-local" class="datepicker-input" name="date" required>-->
+                     <!--   </span>-->
+            	        <input type="datetime-local" class="datepicker-input" name="date" required>
+            	    </div>
+            	    <input type="submit" name="submit" class="btn" value="Udostępnij" />
+            	    </form>
+            	</div>
+            <div class="col-sm-4"></div>
+        </div>
     </div>
 </body>
 
