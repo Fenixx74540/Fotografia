@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family: Poppins, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: purple;
+    background: url('/sesje/rekwizyty/background_udostepnianie.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.wrapper {
+    width: 600px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .3);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    color: white;
+    border-radius: 12px;
+    padding: 30px 45px;
+}
+
+.wrapper h1{
+    font-size: 45px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.wrapper h1 {
+    font-size: 45px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.wrapper i {
+    position: absolute;
+    top: 47%;
+    transform: translateY(-30%);
+    font-size: 35px;
+}
+
+.wrapper h3 {
+    margin-left: 30px;
+    font-size: 35px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.wrapper p{
+    text-align: center;
+}

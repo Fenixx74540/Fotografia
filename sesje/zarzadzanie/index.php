@@ -32,17 +32,19 @@
 
     </head>
     <body>
-            <small>Zalogowany użytkownik: </small>
-            <br>
+        <div class="wrapper">
+            <h1>Zalogowany użytkownik: </h1>
+        
             <?php
                 session_start();
-                print $_SESSION['username'];
+                $user = $_SESSION["username"];
+                echo '<h5>' . $user . '</h5>';
             ?>
-            <br>
-            <a href = "logowanie/logout.php"> WYLOGUJ</a>
 
-        <br><br>
- 
+            <div class="logout">
+                <a href = "logowanie/logout.php"> WYLOGUJ</a>
+            </div>
+        
             <form method="POST" action="upload.php" enctype="multipart/form-data">
                 <?php
                     if (isset($_GET['error'])) {
@@ -51,10 +53,16 @@
                         echo "</p>";
                     }
                 ?>
-                Wybierz zdjęcia do przesłania<br><br>
-                <input type="file" id="getFile" name="images[]" multiple><br><br>
+                <h2>Wybierz zdjęcia do przesłania</h2>
+                <div class="input-box">
+                    <input type="file" id="getFile" name="images[]" multiple>
+                </div>
                 <button type="submit" name="upload">Wyślij</button>
             </form>
+        </div>
+            
+            
+            
         
         <?php if ($stmt->rowCount() > 0) { ?>
         	<div class="gallery">

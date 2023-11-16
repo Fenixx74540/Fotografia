@@ -17,12 +17,12 @@
 
     if(!$conn) { echo"Błąd: ". mysqli_connect_errno()." ".mysqli_connect_error(); } // obsługa błędu połączenia z BD
     mysqli_query($conn, "SET NAMES 'utf8'"); // ustawienie polskich znaków
-    $result = mysqli_query($conn, "SELECT * FROM admin WHERE username='$user'"); // wiersza, w którym login=login z formularza
+    $query = "SELECT * FROM admin WHERE username='$user'";
+    $result = mysqli_query($conn, $query); // wiersza, w którym login=login z formularza
     $rekord = mysqli_fetch_array($result); // wiersza z BD, struktura zmiennej jak w BD
         
         
-    if(!$rekord) //Jeśli brak, to nie ma użytkownika o podanym loginie
-    {
+    if(!$rekord) {//Jeśli brak, to nie ma użytkownika o podanym loginie
         mysqli_close($conn); // zamknięcie połączenia z BD
         echo '<div class="wrapper">';
             echo '<i class="fa-solid fa-triangle-exclamation"></i><br>';
@@ -31,17 +31,15 @@
         echo '</div>';
         exit();
     } else { // jeśli $rekord istnieje
-        if($rekord['password']==$pass) // czy hasło zgadza się z BD
-        {
-            //echo "Logowanie Ok. User: {$rekord['username']}. Hasło: {$rekord['password']}";
+        $hashedPassword = $rekord['password'];
+        //if($rekord['password']==$pass) {// czy hasło zgadza się z BD
+        if(password_verify($pass, $hashedPassword)){
             session_start();
              $_SESSION ['loggedin'] = true;
              $_SESSION['username'] = $rekord['username'];
              header('Location:/sesje/zarzadzanie/index.php');
              exit();
-        }
-        else
-        {
+        } else {
             mysqli_close($conn);
             echo '<div class="wrapper">';
                 echo '<i class="fa-solid fa-triangle-exclamation"></i><br>';

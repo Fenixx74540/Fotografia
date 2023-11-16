@@ -56,21 +56,38 @@ body {
     border-radius: 22px;
     font-size: 18px;
     color: white;
+    /*padding: 20px 45px 20px 20px; */
+}
+
+#shared-count, #shared-date{
     padding: 20px 45px 20px 20px; 
-    
+}
+
+.wrapper input[type="file"]::file-selector-button {
+    margin: 9px;
+    border: 2px solid grey;
+    padding: 0.2em 0.4em;
+    border-radius: 22px;
+    background-color: white;
+    transition: 1s;
+}
+
+.wrapper input[type="file"]::file-selector-button:hover {
+  cursor: pointer;
 }
 
 input[type="datetime-local"]::-webkit-calendar-picker-indicator {
   /*position: absolute;*/
     /*background: transparent;*/
-    color: white;
-  left: 90%;
-  top: 50%;
-  width: 50px;
-  height: 45px;
-  margin: 0;
-  padding: 0;
-  cursor: pointer;
+    /*color: white;*/
+    filter: invert(1);
+    left: 90%;
+    top: 50%;
+    width: 50px;
+    height: 45px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
 }
 
 .input-box i {
@@ -96,5 +113,18 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
     margin-top: 30px;
 }
 
+.wrapper p {
+    font-size: 15px;
+    text-align: center;
+}
+
+.wrapper a {
+    font-size: 40px;
+    text-align: center;
+}
+
+#link-to-copy {
+    display: none;
+}
 
 
