@@ -33,6 +33,11 @@
     </head>
     <body>
         <div class="wrapper">
+            <div class="btn">
+                <a href="logowanie/register.php"> Zarejestruj nowe konto </a><br><br>
+                <a href="udostepnianie/index.php"> Udostępnij zdjęcia </a>
+            </div>
+            
             <h1>Zalogowany użytkownik: </h1>
         
             <?php
@@ -41,7 +46,7 @@
                 echo '<h5>' . $user . '</h5>';
             ?>
 
-            <div class="logout">
+            <div class="btn">
                 <a href = "logowanie/logout.php"> WYLOGUJ</a>
             </div>
         
